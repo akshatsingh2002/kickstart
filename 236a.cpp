@@ -1,32 +1,23 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    int same=0;
     string s;
+    int count=0,rep=0;
     cin>>s;
     int l=s.length();
-    char arr[l];
-   
-    for(int i=0;i<l;i++){
-        arr[i]=s.at(i);
-    }
+    sort(s.begin(),s.end()-1);
+    cout<<s;
     for(int i=0;i<l-1;i++){
-        int count=1;
+        
         for(int j=i+1;j<l;j++){
-            if(arr[i]==arr[j]){
-                count++;
-               
-            }
+            count=1;
+        if(s.at(i)==s.at(j)){
+        break;
+        
         }
-        same=same+count;
+        }
+       rep=count+rep;
     }
-    cout<<same;
-    
-    if(same%2==0){
-    cout<<"CHAT WITH HER!";
-    }
-    else{ 
-    cout<<"IGNORE HIM!";
-    }
+    cout<<rep;
     return 0;
 }

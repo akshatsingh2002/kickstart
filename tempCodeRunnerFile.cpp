@@ -1,28 +1,28 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    int same=0;
     string s;
-    cin>>s;
-    int l=s.length();
-    char arr[l];
-    for(int i=0;i<l;i++){
-        arr[i]=s.at(i);
-    }
-    for(int i=0;i<l-1;i++){
-        for(int j=i+1;j<l-i;j++){
-            if(arr[i]==arr[j]){
-                same++;
-                break;
-            }
+    int count=0,rep=0;
+ cin>>s;
+    long l=s.length();
+    sort(s.begin(),s.end()-1);
+
+    for(long i=0;i<l-1;i++){
+        count=0;
+        for(long j=i+1;j<l;j++){
+            
+        if(s.at(i)==s.at(j)){
+            count++;
+        
         }
+        }
+       rep=rep+count;
     }
-    int final=l-same;
-    if(final%2==0){
-    cout<<"CHAT WITH HER!";
-    }
-    else{ 
-    cout<<"IGNORE HIM!";
-    }
+ 
+long ans=l-rep;
+if(ans%2==0)
+cout<<"CHAT WITH HER!";
+else 
+cout<<"IGNORE HIM!";
     return 0;
 }

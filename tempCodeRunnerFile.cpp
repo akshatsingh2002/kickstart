@@ -2,27 +2,15 @@
 using namespace std;
 int main(){
     string s;
-    int count=0,rep=0;
- cin>>s;
-    long l=s.length();
-    sort(s.begin(),s.end()-1);
-
-    for(long i=0;i<l-1;i++){
-        count=0;
-        for(long j=i+1;j<l;j++){
-            
-        if(s.at(i)==s.at(j)){
-            count++;
-        
-        }
-        }
-       rep=rep+count;
+    cin>>s;
+    transform(s.begin(),s.end(),s.begin(),::tolower);
+    int l=s.length();
+    
+    for(int i=0;i<l;i++){
+      if(s.at(i)!='a'&&s.at(i)!='e'&&s.at(i)!='i'&&s.at(i)!='o'&&s.at(i)!='u'&&s.at(i)!='y')
+      cout<<"."<<s.at(tolower(i));
+     
     }
- 
-long ans=l-rep;
-if(ans%2==0)
-cout<<"CHAT WITH HER!";
-else 
-cout<<"IGNORE HIM!";
+    
     return 0;
 }

@@ -1,17 +1,35 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    long long i;
-    cin>>i;
-    long long arr[i];
-    for(long long l=0;l<i;l++){
-        cin>>arr[l];
-    }
-    sort(arr,arr+i);
-       for(long long l=0;l<i;l++){
-        cout<<arr[l]<<" ";
-    }
-
-
+    int count=1,n;
+    cin>>n;
+    vector<int> arr;
+    int a,b;
+cin>>a;
+for(int i=0;i<a;i++){
+    cin>>b;
+    arr.push_back(b);
+}
+cin>>a;
+for(int i=0;i<a;i++){
+    cin>>b;
+    arr.push_back(b);
+}
+sort(arr.begin(),arr.end());
+int s=arr.size();
+for(int i=0;i<s;i++){
+    cout<<arr.at(i);
+}
+cout<<endl;
+for(int i=1;i<arr.size();i++){
+    if(arr.at(i)!=arr.at(i-1))
+    count++;
+    
+}
+cout<<count;
+if(count==n)
+cout<<"I become the guy.";
+else
+cout<<"Oh, my keyboard!";
     return 0;
 }

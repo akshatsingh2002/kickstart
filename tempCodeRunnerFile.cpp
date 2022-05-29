@@ -1,47 +1,27 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-  int n,count=0;
-  cin>>n;
-  int arr[n];
-  for(int i=0;i<n;i++){
-    cin>>arr[i];
-  }
- int m=*max_element(arr,arr+n);
- int indxm=0;
- if(m==arr[0]){
-   count=0;
- }
-else{
-  for(int i=0;i<n;i++){
-    if(arr[i]==m){
-      indxm=i;
-    }
-  }
-
-for(int i=indxm;i>0;i--){
-  swap(arr[i],arr[i-1]);
-  count++;
-}
-}
- int mn=*min_element(arr,arr+n);
- int indxmn=0;
- if(mn==arr[n-1]){
-   count=count+0;
- }
-else{
-  for(int i=0;i<n;i++){
-    if(arr[i]==mn){
-      indxmn=i;
-    }
-  }
-
-for(int i=indxmn;i<n-1;i++){
-  swap(arr[i],arr[i+1]);
-  count++;
-}
-}
-cout<<count;
+    int count=0;
+    string s;
+    cin>>s;
+    int l=s.length();
+ for(int i=0;i<l-3;){
+     if(s.at(i)=='W'&&s.at(i+1)=='U'&&s.at(i+2)=='B'){
+         s.at(i)='\0';
+         s.at(i+1)='\0';
+         s.at(i+2)='\0';
+         i=i+3;
+         if(count==1){
+             cout<<' ';
+         }
+     }
+     else{
+         count=1;
+         cout<<s.at(i);
+         i++;
+         }
+     }
  
-  return 0;
+
+    return 0;
 }

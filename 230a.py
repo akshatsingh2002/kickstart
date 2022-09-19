@@ -15,13 +15,13 @@ for i in range(0,n):
     lst2.append(int(lst4[0]))
     lst3.append(int(lst4[1]))
 i = int(0)
-con =int(0)
-while con!=n:
+
+for j in range(0,n):
     for i in range(0,n):
         if(int(lst2[i])<strength and lst2[i]!=0):
             strength = strength + int(lst3[i])
             lst2[i] = 0
-            con =con +  1
+
         else:
             continue
 

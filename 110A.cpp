@@ -25,32 +25,34 @@ int main()
         else
         {
             con = 0;
+            // cout<<"Loop Testing";
+            
             for (int j = 0; j < l; j++)
             {
-                if (n[i] == '7' || n[i] == '4')
+                if (n[j] == '7' || n[j] == '4')
                 {
                     count++;
                     cout<<"count:"<<count<<endl;
-                    if (n[i] == '7')
+                    if (n[j] == '7')
                         con7 = 1;
-                    else if (n[i] == '4')
+                    else if (n[j] == '4')
                         con4 = 1;
                 }
             }
-            // count2 = to_string(count);
-            // cout<<count2<<endl;
-            // for (int i = 0; i < l; i++)
-            // {
-            //     if (count2[i] == '7' || count2[i] == '4')
-            //     {
-            //         con = 1;
-            //     }
-            //     else
-            //     {
-            //         con = 0;
-            //         break;
-            //     }
-            // }
+            count2 = to_string(count);
+            cout<<count2<<endl;
+            for (int i = 0; i < l; i++)
+            {   
+                if (count2[i] == '7' || count2[i] == '4')
+                {
+                    con = 1;
+                }
+                else
+                {
+                    con = 0;
+                    break;
+                }
+            }
             break;
         }
         

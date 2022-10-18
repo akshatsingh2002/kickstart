@@ -11,39 +11,36 @@ int main()
     int con = 0, count = 0, con7 = 0, con4 = 0;
     cin >> n;
     int l = n.length();
+    for (int j = 0; j < l; j++)
+    {
+        if (n[j] == '7')
+            con7 = 1;
+        if (n[j] == '4')
+            con4 = 1;
+    }
 
     for (int i = 0; i < l; i++)
     {
         if (n[i] == '7' || n[i] == '4')
         {
             con = 1;
-            if (n[i] == '7')
-                con7 = 1;
-            else if (n[i] == '4')
-                con4 = 1;
         }
         else
         {
-            con = 0;
-            // cout<<"Loop Testing";
-            
             for (int j = 0; j < l; j++)
             {
-                if (n[j] == '7' || n[j] == '4')
+                if (n[j] == '7' or n[j] == '4')
                 {
-                    count++;
-                    cout<<"count:"<<count<<endl;
-                    if (n[j] == '7')
-                        con7 = 1;
-                    else if (n[j] == '4')
-                        con4 = 1;
+                    count = count + 1;
                 }
             }
+            // cout<<"Loop Testing";
             count2 = to_string(count);
-            cout<<count2<<endl;
-            for (int i = 0; i < l; i++)
-            {   
-                if (count2[i] == '7' || count2[i] == '4')
+            // cout << count2 << endl;
+            int l2 = count2.length();
+            for (int k = 0; k < l2; k++)
+            {
+                if (count2[k] == '7' or count2[k] == '4')
                 {
                     con = 1;
                 }
@@ -55,9 +52,8 @@ int main()
             }
             break;
         }
-        
     }
-    cout<<con<<con4<<con7;
+    cout << con << con4 << con7;
 
     if (con == 1 && con4 == 1 && con7 == 1)
         cout << "YES" << endl;

@@ -21,7 +21,7 @@ int main()
 
     for (int i = 0; i < l; i++)
     {
-        if (n[i] == '7' || n[i] == '4')
+        if ((n[i] == '7' || n[i] == '4')&&con4==1 && con7==1)
         {
             con = 1;
         }
@@ -42,7 +42,7 @@ int main()
             {
                 if (count2[k] == '7' or count2[k] == '4')
                 {
-                    con = 1;
+                    con = 2;
                 }
                 else
                 {
@@ -53,9 +53,11 @@ int main()
             break;
         }
     }
-    cout << con << con4 << con7;
+    // cout << con << con4 << con7;
 
     if (con == 1 && con4 == 1 && con7 == 1)
+        cout << "YES" << endl;
+    else if (con == 2)
         cout << "YES" << endl;
     else
         cout << "NO" << endl;

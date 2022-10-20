@@ -1,1 +1,1 @@
-cout << con << con4 << con7;
+#include<math.h>

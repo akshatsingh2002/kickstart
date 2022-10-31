@@ -1,1 +1,1 @@
-#include<math.h>
+    // cout<<arr[i];

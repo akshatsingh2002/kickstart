@@ -1,1 +1,1 @@
-    // cout<<arr[i];
+ cout<<max_val<<" "<<min_val<<endl;

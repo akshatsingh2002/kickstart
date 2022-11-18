@@ -15,7 +15,7 @@ int main()
     {
         cin >> arr[i];
     }
-    for (long long i = 0; i < m - n  ; i++)
+    for (long long i = 0; i < m - n + 1 ; i++)
     {
         max_val = 4;
         min_val = 1000;
@@ -25,7 +25,7 @@ int main()
             // cout<<i<<"i"<<j<<'J'<<endl;
             
 
-            if (arr[i] >= max_val)
+            if (arr[j] >= max_val)
             {
                 max_val = arr[j];
             }
@@ -34,24 +34,24 @@ int main()
                 min_val = arr[j];
             }
 
-            cout<<max_val<<" "<<min_val<<endl;
+            // cout<<max_val<<" "<<min_val<<endl;
         }
         // cout<<max_val-min_val<<"ans";
         values[i] = max_val - min_val;
     }
-    int max_val2 = 0;
-    for (long long i = 0; i < m - n ; i++)
+    int min_val2 = 1000;
+    for (long long i = 0; i < m - n + 1; i++)
     {
-        // cout<<values[i]<<endl;
+        cout<<values[i]<<endl;
 
-        if (values[i] >= max_val2)
+        if (values[i] <= min_val2)
         {
-            max_val2 = values[i];
+            min_val2 = values[i];
             values[i];
         }
     }
 
-    cout << max_val2 << endl;
+    cout << min_val2 << endl;
 
     return 0;
 }

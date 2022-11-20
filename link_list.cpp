@@ -20,6 +20,7 @@ class LinkedList{
         Node *newNode = new Node(data);
         if(head == NULL){
             head =newNode;
+            tail = head;
         }
         else{
             newNode->next = head;
@@ -61,6 +62,35 @@ class LinkedList{
             current = current->next;
         }
     }
+    
+    void deleteNode(int dataToDel){
+        if(head == NULL){
+            cout<<"List is empty"<<endl;
+            return;
+        }
+        else if(head->data==dataToDel){
+            Node *current = head ;
+            head = head->next;
+            delete(current);
+        }
+        else{
+            Node *current = head;
+            while(current->next!=NULL && current->next->data!=dataToDel){
+                current=current->next;
+            }
+            if(current->next==NULL){
+                cout<<"Data does not exist"<<endl;
+            }
+            else{
+                Node *temp= current->next;
+                current->next = temp->next;
+                free(temp);
+            }
+        }
+    }
+
+
+
 };
 
 int main(){
@@ -69,6 +99,7 @@ int main(){
     // ll.insertAtEnd(30);
     // ll.insertAtEnd(40);
     ll.insertAtTail(100);
+    ll.insertAtTail(90);
     ll.display();
     return 0;
 }

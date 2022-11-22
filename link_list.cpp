@@ -88,6 +88,9 @@ class LinkedList{
             }
         }
     }
+    void reverseLl(){
+        
+    }
 
 
 

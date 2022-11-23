@@ -88,8 +88,15 @@ class LinkedList{
             }
         }
     }
-    void reverseLl(){
-        
+    void reverseLl(){   
+        Node *current=head , *prev=NULL;
+        while(current!=NULL){
+        Node * temp = current->next;
+        current->next = prev;
+        prev = current;
+        current= temp;
+        }
+        head = prev;
     }
 
 

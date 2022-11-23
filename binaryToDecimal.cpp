@@ -1,25 +1,31 @@
-#include<iostream>
-#include<math.h>
+#include <iostream>
+#include <math.h>
 using namespace std;
-int main(){
+
+int bitwiseComplement(int n)
+{
+    int mask = 0;
+    int j = ~n;
+    if (n != 0)
+    {
+        while (n != 0)
+        {
+            n = n >> 1;
+            mask = (mask << 1) | 1;
+            // cout<<mask<<endl;
+        }
+        //    cout<<mask;
+        return (j & mask);
+    }
+    else
+        return 1;
+}
+
+int main()
+{
     int n;
     cin>>n;
-    int i=0;
-    int bit=0;
-    int ans = 0;
+    cout<<bitwiseComplement(n);
 
-    while(n!=0){
-        bit = n%10; //// 1001 %10
-        
-        // cout<<i<<"i";
-         ans = ans + bit*pow(2,i);
-        n = n /10;
-       
-        // cout<<"ans"<<ans<<endl;
-        i++;
-
-
-    }
-    cout<<ans<<endl;
     return 0;
 }

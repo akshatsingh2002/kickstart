@@ -1,15 +1,17 @@
 #include<iostream>
+#include<string.h>
 using namespace std;
   int hammingWeight(uint32_t n) {
     int count=0;
+    string str1 = to_string(n);
+    cout<<str1;
     for(int i=0;i<31;i++){
-        if(n&1){
-            count++;
-        }
-
-        n=n>>1;
-        cout<<n<<endl;
+      if(str1[i]=='1'){
+        count++;
+      }
     }
+
+
     return count;
         
     }

@@ -1,20 +1,10 @@
-    bool isPowerOfTwo(int n) {
-        int j = 2;
-        if(n==1 || n == 2){
-            return true;
-        }
-        else if(n%2==0){
-            while(j<=n){
-                if(n==j){
-                    return true;
-                    break;
-                }
-                j = j*2;
-                // cout<<j<<endl;
-            }
-        }
-        else 
-        return false;
-
-        
+#include<iostream>
+using namespace std;
+int main(){
+    int arr[10]={1,2,3,4,5,6,7,8,9,10};
+    for(int i=0;i<=11;i++){
+        cout<<arr[i]<<endl;
     }
+
+    return 0;
+}

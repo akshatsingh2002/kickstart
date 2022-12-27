@@ -1,12 +1,12 @@
 #include <iostream>
-
+#include<cmath>
 using namespace std;
 void solution()
 {
     int n;
     cin >> n;
     int arr[n];
-    int sum = 0, count = 0, min = 10000;
+    int sum = 0, count = 0 ,min = 10000;
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
@@ -16,13 +16,15 @@ void solution()
             min = arr[i];
         }
     }
+    if(min%2!=0){
+        min++;
+    }
     if (sum % 2 == 0)
     {
         cout << "0" << endl;
     }
     else
     {   
-        min = min +1;
        while(min!=1){
         min = min /2 ;
         count = count + 1;
@@ -30,6 +32,8 @@ void solution()
        cout<<count<<endl;
     }
 }
+
+
 int main()
 {
     int n;
@@ -37,7 +41,7 @@ int main()
     while (n != 0)
     {
         solution();
-        n--;
+        n=n-1;
     }
     return 0;
 }

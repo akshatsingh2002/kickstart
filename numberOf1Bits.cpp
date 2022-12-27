@@ -1,23 +1,26 @@
-#include<iostream>
-#include<string.h>
+#include <iostream>
+
 using namespace std;
-  int hammingWeight(uint32_t n) {
-    int count=0;
-    string str1 = to_string(n);
-    cout<<str1;
-    for(int i=0;i<31;i++){
-      if(str1[i]=='1'){
-        count++;
-      }
-    }
 
-
-    return count;
-        
+int hammingWeight(uint32_t n)
+{
+  int count = 0;
+  // to improve time commplexity use brian kernighan's algorithm
+  for (int i = 0; i < 32; i++)
+  {
+    if (n & 1)
+    {
+      count++;
     }
-int main(){
-    uint32_t n;
-    cin>>n;
-    cout<<hammingWeight(n);
-    return 0;
+    n = n >> 1;
+  }
+
+  return count;
+}
+int main()
+{
+  uint32_t n;
+  cin >> n;
+  cout << hammingWeight(n);
+  return 0;
 }

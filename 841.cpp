@@ -37,7 +37,12 @@ void demdogs(){
         i = i + 2;
         j = j + 2;
     }
-    cout<<ans<<endl;
+    if(n ==2 || n == 3)
+    cout<<7*2022<<endl;
+    else {
+        ans = ans - (n*n);
+    cout<<ans*2022<<endl;
+    }
     }
 
 int main(){

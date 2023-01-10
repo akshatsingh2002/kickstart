@@ -1,6 +1,4 @@
-#include <iostream>
-#include <algorithm>
-using namespace std;
+code
 // void ugly()
 // {
 //     int n;

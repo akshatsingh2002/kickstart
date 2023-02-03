@@ -45,6 +45,8 @@ void joke(){
         else
         cout<<"NO";
     }
+    else
+    cout<<"NO";
 }
 }
 

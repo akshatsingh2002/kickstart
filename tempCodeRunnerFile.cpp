@@ -1,1 +1,1 @@
-cout<<str.at(i)<<str.at(j)<<endl;
+cout<<"val"<<val;

@@ -5,32 +5,45 @@ void cut()
 {
     int n, a, b, c;
     cin >> n >> a >> b >> c;
- 
+    int max = 0;
     int arr[3];
     arr[0] = a;
     arr[1] = b;
     arr[2] = c;
- 
+
     sort(arr, arr + 3);
-    int count = 0;
-    int sum = 0;
-    while(sum!=n){
-        if(sum + arr[1]==n){
-            sum = sum + arr[1];
-            count++;
-            break;
-        }
-        else if(sum + arr[2]==n){
-            sum = sum + arr[2];
-            count++;
-            break;
-        }
-        else{
-            sum = sum + arr[0];
-            count++;
-        }
+    a = arr[0];
+    b = arr[1];
+    c = arr[2];
+    if (n % arr[0] == 0)
+    {
+        max = n / arr[0];
+        cout << max << endl;
     }
-    cout << count << endl;
+    else
+    {
+        for (int i = 0; i <= n / a; i++)
+        {
+            for (int j = 0; j <= n / b; j++)
+            {
+                int k = n - (a * i) + (b * j);
+                if (k * c < 0)
+                {
+                    break;
+                }
+
+                else
+                {
+                    k = k / c;
+                    if (max < i + j + k)
+                    {
+                        max = i + j + k;
+                    }
+                }
+            }
+        }
+        cout << max << endl;
+    }
 }
 int main()
 {

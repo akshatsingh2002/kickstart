@@ -20,24 +20,39 @@ void cut()
         max = n / arr[0];
         cout << max << endl;
     }
+    else if (a == b || b == c || a == b == c)
+    {
+        for (int i = 0; i <= n / a; i++)
+        {
+            for (int j = 0; j <= n / c; j++)
+            {
+                if ((i * a) + (j * c) == n)
+                {
+                    if (max < i + j)
+                    {
+                        max = i + j;
+                    }
+                    break;
+                }
+            }
+        }
+        cout << max << endl;
+    }
     else
     {
         for (int i = 0; i <= n / a; i++)
         {
             for (int j = 0; j <= n / b; j++)
             {
-                int k = n - (a * i) + (b * j);
-                if (k * c < 0)
+                for (int k = 0; k <= n / c; k++)
                 {
-                    break;
-                }
-
-                else
-                {
-                    k = k / c;
-                    if (max < i + j + k)
+                    if ((i * a) + (j * b) + (k * c) == n)
                     {
-                        max = i + j + k;
+                        if (max < i + j + k)
+                        {
+                            max = i + j + k;
+                        }
+                        break;
                     }
                 }
             }

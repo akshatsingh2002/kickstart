@@ -1,40 +1,29 @@
 #include <iostream>
 #include <algorithm>
+#include <map>
 using namespace std;
 void boredom()
 {
     int n;
     cin >> n;
-    int arr[n];
-    int max = 0;
-    int cost = 0;
+    map<int, int> arr;
     for (int i = 0; i < n; i++)
     {
-        cin >> arr[i];
-    }
-    sort(arr, arr + n);
-    int val = arr[0];
-    for (int i = 0; i < n; i++)
-    {   int val = arr[i];
-        for (int j = i; j < n; j++)
+        int val;
+        cin >> val;
+        if (arr.find(val) != arr.end())
         {
-            if (arr[j] == val)
-            {
-                cost = cost + val;
-            }
-            else if (arr[j] != val + 1 && arr[j] != val - 1)
-            {
-                cost = cost + arr[j];
-                val = arr[j];
-            }
+            arr.insert({val, val});
         }
-        if (max < cost)
-        {
-            max = cost;
+        else
+
+        {   arr[val[]]
         }
-        cost = 0;
     }
-    cout << max << endl;
+    for (auto itr = arr.begin(); itr != arr.end(); itr++)
+    {
+        cout << itr->first << itr->second;
+    }
 }
 int main()
 {

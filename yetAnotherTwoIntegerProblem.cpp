@@ -12,7 +12,15 @@ void steps()
         b = temp;
     }
     int count = 0;
-    if (b - a <= 10)
+    if (a == b)
+    {
+        count = 0;
+    }
+    else if (b - a <= 10)
+    {
+        count = 1;
+    }
+    else if (a == b)
     {
         count = 0;
     }
@@ -21,7 +29,7 @@ void steps()
         b = b - a;
         count = b / 10;
         b = b % 10;
-        if (b <=10 && b !=0)
+        if (b <= 10 && b != 0)
         {
             count++;
         }

@@ -15,8 +15,7 @@ void max_card()
     while(l<=r)
     {
 
-        
-            if (arr[l] > arr[r])
+            if (arr[l] >= arr[r])
             {
                 s = s + arr[l];
                 arr[l] = 0 ;
@@ -32,7 +31,7 @@ void max_card()
         
 
         
-            if (arr[l] > arr[r])
+            if (arr[l] >= arr[r])
             {
                 d = d + arr[l];
                 arr[l] = 0 ;
@@ -44,7 +43,14 @@ void max_card()
                 arr[r] = 0 ;
                 r = r - 1;
             }
+            
     }
+    if(n == 1){
+        d = 0 ;
+        cout << s << " " << d << endl;
+    }
+    else 
+
     cout << s << " " << d << endl;
 }
 int main()

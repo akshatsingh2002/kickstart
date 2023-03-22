@@ -6,50 +6,26 @@ void candies()
     int n;
     cin >> n;
     int arr[n];
-    int con = 0;
+    int se = 0, so = 0;
     for (int i = 0; i < n; i++)
     {
-        cin >> arr[i];
-    }
-    int sum1 = 0, sum2 = 0;
-    for (int i = 1; i < n; i++)
-    {
-        for (int k = i; k >= 0; k--)
-        {
-            if (arr[k] > arr[k - 1] && arr[k] % 2 == 0)
-            {
-                swap(arr[k - 1], arr[k]);
-            }
-        }
-    }
-    for (int i = 0; i < n; i++)
-    {   
+        cin>>arr[i];
         if (arr[i] % 2 == 0)
         {
-            sum1 = sum1 + arr[i];
+            se = se + arr[i];
         }
         else
         {
-            sum2 = sum2 + arr[i];
-        }
-        if (sum1 > sum2)
-        {
-            con = 1;
-        }
-        else
-        {
-            con = 0;
-            break;
+            so = so + arr[i];
         }
     }
-    if (con == 0)
-    {
-        cout << "NO" << endl;
-    }
-    else
+
+    if (se > so)
     {
         cout << "YES" << endl;
     }
+    else
+        cout << "NO" << endl;
 }
 int main()
 {

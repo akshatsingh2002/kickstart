@@ -9,10 +9,10 @@ void eren()
     {
         if (i % 2 == 0)
         {
-            sum = sum + b;
+            sum = sum + a;
         }
         else
-            sum = sum + a;
+            sum = sum + b;
     }
     cout << sum << endl;
 }

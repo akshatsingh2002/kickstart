@@ -19,9 +19,10 @@ void odd()
         l--;
         r--;
 
-        for (int j = l; j <= r; j++)
+        for (int j = l; j<r;)
         {
-            localSum = localSum + arr[j];
+            localSum = localSum + arr[j] + arr[j+1];
+            j=j+2;
         }
         localSum = sum - localSum;
         localSum = localSum + (r - l + 1) * k;

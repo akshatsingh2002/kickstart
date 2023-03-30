@@ -5,11 +5,11 @@ void odd()
     int n, q;
     cin >> n >> q;
     int arr[n];
-    long long  sum = 0;
+    long long sum = 0;
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
-        sum = sum + arr[i];
+        sum = sum + arr[i]; 
     }
     int l, r, k;
     for (int i = 0; i < q; i++)
@@ -18,11 +18,14 @@ void odd()
         cin >> l >> r >> k;
         l--;
         r--;
-
-        for (int j = l; j<r;)
+        int j=l;
+        for (;j < r;)
         {
-            localSum = localSum + arr[j] + arr[j+1];
-            j=j+2;
+            localSum = localSum + arr[j] + arr[j + 1];
+            j = j + 2;
+        }
+        if(j==r){
+            localSum = localSum + arr[r];
         }
         localSum = sum - localSum;
         localSum = localSum + (r - l + 1) * k;

@@ -9,7 +9,9 @@ void odd()
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
-        sum = sum + arr[i]; 
+        arr[i] = arr[i] % 10;
+        sum = sum + arr[i];
+        sum = sum % 10; 
     }
     int l, r, k;
     for (int i = 0; i < q; i++)
@@ -22,10 +24,12 @@ void odd()
         for (;j < r;)
         {
             localSum = localSum + arr[j] + arr[j + 1];
+            localSum = localSum % 10;
             j = j + 2;
         }
         if(j==r){
             localSum = localSum + arr[r];
+            localSum = localSum % 10;
         }
         localSum = sum - localSum;
         localSum = localSum + (r - l + 1) * k;

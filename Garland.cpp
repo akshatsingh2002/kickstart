@@ -11,25 +11,12 @@ void garland()
     {
         cout << -1 << endl;
     }
-    else
+    else if ((s[0] == s[1] && s[1] == s[2]) || (s[1] == s[2] && s[2] == s[3]))
     {
-        int dis = 1;
-        for (int i = 1; i < 4; i++)
-        {
-            if (s[i] != s[i - 1])
-            {
-                dis++;
-            }
-        }
-        if (dis >= 4)
-        {
-            cout << 4 << endl;
-        }
-        else
-        {
-            cout << 6 << endl;
-        }
+        cout << 6 << endl;
     }
+    else
+        cout << 4 << endl;
 }
 
 int main()

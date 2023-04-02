@@ -7,35 +7,35 @@ int target()
     cin >> n;
     string s;
     cin >> s;
-
-    int resultIndex = 0;
-    int start = 0;
-    for (int i = 0; i < n; i++)
-    {
-        if (s[i] != s[0])
-        {
-            start = i;
+    int resulting = 0;
+    int con = 0;
+    for(int i = 0;i<n;i++){
+        if(s[i]!=s[0]){
+            resulting = i;
             break;
         }
     }
-    int min = int(s[start - 1]);
-    for (int i = start; i < n; i++)
-    {
-        if (int(s[i]) <= min)
-        {
-            cout << s[i];
-            resultIndex = i;
+    int min = int(s[0]);
+    int skip = 0;
+    for(int i = resulting;i<n;i++){
+        if(int(s[i])<=min){
+            con = 1;
+            skip = i;
+        }
+        else if(s[i]=='a'){
+            skip = i ;
+            con = 1;
             break;
         }
     }
-    for (int i = 0; i < n; i++)
-    {
-        if (i != resultIndex || resultIndex == 0)
-        {
-            cout << s[i];
+    if(con = 1)
+    cout<<s[skip];
+    for(int i=0;i<n;i++){
+        if(con == 1 && i!=skip){
+            cout<<s[i];
         }
     }
-    cout << endl;
+    cout<<endl;
 }
 int main()
 {

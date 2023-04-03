@@ -1,57 +1,15 @@
-#include <iostream>
-#include <string>
-using namespace std;
-int target()
-{
-    int n;
-    cin >> n;
-    string s;
-    cin >> s;
-    int resulting = 0;
-    int con = 0;
-    for (int i = 0; i < n; i++)
-    {
-        if (s[i] != s[0])
-        {
-            resulting = i;
-            break;
+int swapindex = 0;
+    for(int i=0;i<size;i++){
+        int min = arr[i];
+        for(int j = i;j<size;j++){
+            if(arr[j]<min){
+                min = arr[j];
+                swapindex = j;
+            }
         }
+        swap(arr[i],arr[swapindex]);
     }
 
-    int min = int(s[0]);
-    int skip = 0;
-    for (int i = resulting; i < n; i++)
-    {
-        if (int(s[i]) <= min)
-        {
-            con = 1;
-            skip = i;
-        }
-        if (s[i] == 'a')
-        {
-            skip = i;
-            con = 1;
-            break;
-        }
+    for(int i=0;i<size;i++){
+        cout<<arr[i]<<" ";
     }
-    if (con = 1)
-        cout << s[skip];
-    for (int i = 0; i < n; i++)
-    {
-        if (con == 1 && i != skip)
-        {
-            cout << s[i];
-        }
-    }
-    cout << endl;
-}
-int main()
-{
-    int n;
-    cin >> n;
-    while (n--)
-    {
-        target();
-    }
-    return 0;
-}

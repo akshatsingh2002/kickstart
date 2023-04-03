@@ -1,47 +1,57 @@
 #include <iostream>
-#include <vector>
+#include <string>
 using namespace std;
-void candies()
+int target()
 {
     int n;
     cin >> n;
-    if (n % 2 != 0)
+    string s;
+    cin >> s;
+    int resulting = 0;
+    int con = 0;
+    for (int i = 0; i < n; i++)
     {
-        vector<int> binary;
-        int i = 0;
-        while (n > 0)
+        if (s[i] != s[0])
         {
-            binary.push_back(n % 2);
-            n = n / 2;
-            i++;
+            resulting = i;
+            break;
         }
-        cout<<binary.size()-1<<endl;
-        for (int i = 0; i < binary.size() - 1; i++)
-        {
-            if (binary[i] == 1)
-            {
-                cout << 2 << " ";
-            }
-            else
-            {
-                cout << 1 << " ";
-            }
-        }
-        cout << endl;
     }
-    else
+
+    int min = int(s[0]);
+    int skip = 0;
+    for (int i = resulting; i < n; i++)
     {
-        cout << -1 << endl;
+        if (int(s[i]) <= min)
+        {
+            con = 1;
+            skip = i;
+        }
+        if (s[i] == 'a')
+        {
+            skip = i;
+            con = 1;
+            break;
+        }
     }
+    if (con = 1)
+        cout << s[skip];
+    for (int i = 0; i < n; i++)
+    {
+        if (con == 1 && i != skip)
+        {
+            cout << s[i];
+        }
+    }
+    cout << endl;
 }
 int main()
 {
-    int k = 0;
-    cin >> k;
-    while (k!=0)
+    int n;
+    cin >> n;
+    while (n--)
     {
-        candies();
-        k = k - 1;
+        target();
     }
     return 0;
 }

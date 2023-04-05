@@ -4,17 +4,20 @@ void countof1()
 {
     int k;
     cin >> k;
-    int n;
+    long long  n;
     cin >> n;
     int count1 = 0, count2 = 0;
-    int arr2[n];
-
-    int arr[n];
+    int arr[k];
+    int arr2[k];
     for (int i = k - 1; i >= 0; i--)
     {
         arr[i] = n % 10;
         n = n / 10;
     }
+    // for(int i=0;i<k;i++){
+    //     cout<<arr[i];
+    // }
+    // cout<<endl;
     arr2[0] = 0;
     for (int i = 1; i < k; i++)
     {
@@ -47,9 +50,10 @@ int main()
 {
     int k;
     cin >> k;
-    while (k--)
+    while (k!=0)
     {
         countof1();
+        k = k - 1;
     }
     return 0;
 }

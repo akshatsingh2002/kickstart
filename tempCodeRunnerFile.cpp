@@ -1,45 +1,34 @@
 #include <iostream>
+#include<algorithm>
 using namespace std;
 void countof1()
-{
-    int k;
-    cin >> k;
-    long long n;
-    cin >> n;
-    int count1 = 0, count2 = 1;
-    int arr[k];
-    int arr2[k];
-    int arr3[k];
-    for (int i = k - 1; i >= 0; i--)
-    {
-        arr[i] = n % 10;
-        n = n / 10;
+{  
+    long long n,s,x;
+    cin>>n>>s;
+    long long arr1[n],arr2[n];
+    long long coun1=0,count2=0;
+    for(int i=n-1;i>=0;i--){
+        arr1[i]=s%10;
+        s = s / 10;
     }
     arr2[0] = 0;
-    for (int i = 1; i < k; i++)
-    {
-        arr2[i] = arr2[i - 1] ^ arr[i - 1];
-        if (arr[i] == 1)
-        {
-            count1++;
+    for(int i=1;i<n;i++){
+        arr2[i]=arr1[i-1]^arr2[i-1];
+        if(arr2[i]==1){
+            coun1++;
         }
     }
-    arr3[0] = 1;
-
-    for (int i = 1; i < k; i++)
-    {
-        arr3[i] = arr3[i - 1] ^ arr[i - 1];
-        if (arr3[i] == 1)
-        {
+    arr2[0]=1;
+    count2 ++;
+    for(int i=1;i<n;i++){
+        arr2[i]=arr1[i-1]^arr2[i-1];
+        if(arr2[i]==1){
             count2++;
         }
     }
-    if (count1 > count2)
-    {
-        cout << count1 << endl;
-    }
-    else
-        cout << count2 << endl;
+    cout<<max(coun1,count2)<<endl;
+
+
 }
 int main()
 {

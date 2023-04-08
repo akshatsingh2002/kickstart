@@ -1,32 +1,43 @@
 #include <iostream>
+#include<string>
 #include<algorithm>
 using namespace std;
 void countof1()
 {  
-    long long n,s,x;
-    cin>>n>>s;
-    long long arr1[n],arr2[n];
-    long long coun1=0,count2=0;
-    for(int i=n-1;i>=0;i--){
-        arr1[i]=s%10;
-        s = s / 10;
-    }
-    arr2[0] = 0;
-    for(int i=1;i<n;i++){
-        arr2[i]=arr1[i-1]^arr2[i-1];
-        if(arr2[i]==1){
-            coun1++;
+   int n;
+   cin>>n;
+   string s;
+   cin>>s;
+    int count1=0,count2=0;
+    int prev=0;
+    for(int i=0;i<n;i++){
+        int newval;
+        if(s[i] == '0'){
+            newval = prev^0;
+        }
+        else{
+            newval = prev^1;
+        }
+        prev = newval;
+        if(newval == 1){
+            count1++;
         }
     }
-    arr2[0]=1;
-    count2 ++;
-    for(int i=1;i<n;i++){
-        arr2[i]=arr1[i-1]^arr2[i-1];
-        if(arr2[i]==1){
+    prev = 1;
+     for(int i=0;i<n;i++){
+        int newval;
+        if(s[i] == '0'){
+            newval = prev^0;
+        }
+        else{
+            newval = prev^1;
+        }
+        prev = newval;
+        if(newval == 1){
             count2++;
         }
     }
-    cout<<max(coun1,count2)<<endl;
+    cout<<max(count1,count2)<<endl;
 
 
 }

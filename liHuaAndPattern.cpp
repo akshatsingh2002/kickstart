@@ -36,7 +36,7 @@ void pattern()
         
     }
     
-    if(i==n && j==n){
+    if(i==n && j==n && k == 0){
         cout<<"YES"<<endl;
     }
     else{

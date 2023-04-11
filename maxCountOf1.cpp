@@ -8,7 +8,7 @@ void countof1()
    cin>>n;
    string s;
    cin>>s;
-    int count1=0,count2=0;
+    int count1=0;
     int prev=0;
     for(int i=0;i<n;i++){
         int newval;
@@ -18,26 +18,17 @@ void countof1()
         else{
             newval = prev^1;
         }
-        prev = newval;
+
         if(newval == 1){
             count1++;
         }
     }
-    prev = 1;
-     for(int i=0;i<n;i++){
-        int newval;
-        if(s[i] == '0'){
-            newval = prev^0;
-        }
-        else{
-            newval = prev^1;
-        }
-        prev = newval;
-        if(newval == 1){
-            count2++;
-        }
+    if(count1>n/2){
+        cout<<count1<<endl;
     }
-    cout<<max(count1,count2)<<endl;
+    else{
+        cout<<n-count1<<endl;
+    }
 
 
 }

@@ -18,17 +18,20 @@ void merger(int arr1[], int n, int arr2[], int m)
             k++;
         }
         i++;
+        cout<<j<<k<<endl;
     }
-    cout<<j<<k;
+    
     while(j<n){
-        arr[i] = arr1[j];
         i++;
+        arr[i] = arr1[j];
         j++;
+
     }
     while(k<m){
-        arr[i] = arr1[k];
         i++;
+        arr[i] = arr1[k];
         k++;
+
     }
     for (auto itr=arr.begin();itr<arr.end();itr++)
 

@@ -1,40 +1,38 @@
-#include <iostream>
-using namespace std;
-void chess()
-{
-    long long n;
-    cin >> n;
-    long long ans = 2,ans1 = 0;
-    if (n <= 2)
+int con = 0;
+    for (int i = 0; i < s.length(); i++)
     {
-        cout << 0 << endl;
-    }
-    else if (n == 4)
-    {
-        cout << 3 << endl;
-    }
-    else if (n == 3)
-    {
-        cout << 2 << endl;
-    }
-    else
-    {
-        for(int i=3;i<=n-1;i++){
-            if(i%2!=0){
-                ans1 ++;
-            }
-            else{
-                ans = ans  + 2;
-            }
+        if (int(s[i]) >= 48 && int(s[i]) <= 57)
+        {
+            continue;
+        }
+        else if (int(s[i]) >= 97 && int(s[i]) <= 122)
+        {
+            continue;
+        }
+        else
+        {
+            s.erase(i, 1);
         }
     }
-    cout<<ans1+ans<<endl;
-}
-int main(){
-    long long t;
-    cin>>t;
-    while(t--){
-        chess();
+    int k = count(s.begin(), s.end(), ' ');
+    remove(s.begin(), s.end(), ' ');
+    cout << s << endl;
+    int i = 0;
+    int l = s.length() - 1 - k;
+    while (i < l)
+    {
+        cout << i << " " << l << endl;
+        cout << s[i] << " " << s[l] << endl;
+        if (s[i] == s[l])
+        {
+            con = 1;
+        }
+        else
+        {
+            con = 0;
+            break;
+        }
+        i++;
+        l--;
     }
-    return 0;
-}
+    return con;

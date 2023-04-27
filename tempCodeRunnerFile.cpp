@@ -1,38 +1,10 @@
-int con = 0;
-    for (int i = 0; i < s.length(); i++)
-    {
-        if (int(s[i]) >= 48 && int(s[i]) <= 57)
-        {
-            continue;
+string l;
+    for(int i=0;i<s.length();i++){
+        if(s.at(i)==' '){
+            l = l + "@40";
         }
-        else if (int(s[i]) >= 97 && int(s[i]) <= 122)
-        {
-            continue;
-        }
-        else
-        {
-            s.erase(i, 1);
+        else{
+            l = l + s[i];
         }
     }
-    int k = count(s.begin(), s.end(), ' ');
-    remove(s.begin(), s.end(), ' ');
-    cout << s << endl;
-    int i = 0;
-    int l = s.length() - 1 - k;
-    while (i < l)
-    {
-        cout << i << " " << l << endl;
-        cout << s[i] << " " << s[l] << endl;
-        if (s[i] == s[l])
-        {
-            con = 1;
-        }
-        else
-        {
-            con = 0;
-            break;
-        }
-        i++;
-        l--;
-    }
-    return con;
+    cout<<l<<endl;

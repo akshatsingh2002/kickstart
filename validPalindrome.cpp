@@ -4,19 +4,22 @@
 using namespace std;
 bool isPalindrome(string s)
 {
-    transform(s.begin(), s.end(), s.begin(), ::tolower);
     string ans;
     for (int i = 0; i < s.length(); i++)
     {
-        if (int(s[i]) >= 48 and int(s[i]) <= 57)
-        {
+        if(s[i]==' '){
+            continue;
+        }
+        else if(s[i]>='A' || s[i]<='Z'){
+            cout<<" transformation working"<<endl;
+            ans = ans + char(int(s[i])+32);
+        }
+        else  if(s[i]>='a' || s[i]<='z'){
             ans = ans + s[i];
         }
-        else if (int(s[i]) >= 97 and int(s[i] <= 122))
-        {
-            ans = ans + s[i];
-        }
+
     }
+    cout<<ans<<endl;
     int i = 0;
     int con = 0;
     int l = ans.length() - 1;
@@ -46,7 +49,7 @@ bool isPalindrome(string s)
 
 int main(){
     string s;
-    cin>>s;
+    getline(cin,s);
     cout<<isPalindrome(s);
     return 0;
 }

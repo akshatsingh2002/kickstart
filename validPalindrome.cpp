@@ -17,6 +17,7 @@ bool isPalindrome(string s)
         else  if(s[i]>='a' || s[i]<='z'){
             ans = ans + s[i];
         }
+        
 
     }
     cout<<ans<<endl;

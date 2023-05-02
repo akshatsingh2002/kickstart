@@ -6,6 +6,7 @@ using namespace std;
 //     }
 //     cout<<endl;
 // }
+
 // int multiply(int a, int b)
 // {
 //     if (a == 0)
@@ -17,10 +18,23 @@ using namespace std;
 //         return b + multiply(--a, b);
 //     }
 // }
+
+int myPower(int a, int b)
+{
+    if (b == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return a * myPower(a, --b);
+    }
+}
 int main()
 {
     // int n = 122;
     // myPrint(n);
+
     // int a, b;
     // cout << "Enter fist number: ";
     // cin >> a;
@@ -29,6 +43,16 @@ int main()
     // cin >> b;
     // cout << endl;
     // int ans = multiply(a, b);
+    // cout << ans << endl;
+
+    // int a, b;
+    // cout << "Enter fist number: ";
+    // cin >> a;
+    // cout << endl;
+    // cout << "Enter second number: ";
+    // cin >> b;
+    // cout << endl;
+    // int ans = myPower(a, b);
     // cout << ans << endl;
 
     return 0;

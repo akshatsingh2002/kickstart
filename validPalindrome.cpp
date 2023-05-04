@@ -10,20 +10,23 @@ bool checkPalindrome(string s)
         }
     }
     int l = newstr.size();
+    int con = 1;
     for(int i=0;i<l/2;i++){
         if(newstr[i]!=s[l-i-1]){
-            return 0;
+            con = 0;
+            break;
         }
     }
-    return 1;
+    return con;
 }
 
 int main(){
     int t;
     string s;
+    cin>>t;
     while(t--){
-        cin>>s;
-    checkPalindrome(s);
+        getline(cin,s);
+        checkPalindrome(s);
     }
     return 0;
 }

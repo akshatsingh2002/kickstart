@@ -9,11 +9,21 @@ bool checkPalindrome(string s)
             newstr = newstr + s[i];
         }
     }
-    cout<<newstr<<endl;
+    int l = newstr.size();
+    for(int i=0;i<l/2;i++){
+        if(newstr[i]!=s[l-i-1]){
+            return 0;
+        }
+    }
+    return 1;
 }
 
 int main(){
-    string s="N2 i&nJA?a& jnI2n";
+    int t;
+    string s;
+    while(t--){
+        cin>>s;
     checkPalindrome(s);
+    }
     return 0;
 }

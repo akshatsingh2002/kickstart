@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 bool checkPalindrome(string s)
-{
+{   cout<<"Input taken"<<endl;
     transform(s.begin(), s.end(), s.begin(), ::tolower);
     string newstr;
     for (int i = 0; i < s.length(); i++)
@@ -11,7 +11,6 @@ bool checkPalindrome(string s)
             newstr = newstr + s[i];
         }
     }
-    cout << newstr<<endl;
     int i = 0, l = newstr.length() - 1;
     while (i < l)
     {
@@ -33,7 +32,7 @@ int main()
     while (t--)
     {
         getline(cin, s);
-        checkPalindrome(s);
+        cout<<checkPalindrome(s)<<endl;
     }
     return 0;
 }

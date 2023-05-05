@@ -1,31 +1,38 @@
-#include <bits/stdc++.h> 
+#include <bits/stdc++.h>
 using namespace std;
 bool checkPalindrome(string s)
 {
-    transform(s.begin(),s.end(),s.begin(), ::tolower);
+    transform(s.begin(), s.end(), s.begin(), ::tolower);
     string newstr;
-    for(int i=0;i<s.size();i++){
-        if(int(s[i]>=97 && int(s[i])<=122)){
+    for (int i = 0; i < s.length(); i++)
+    {
+        if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 0 && s[i] <= 9))
+        {
             newstr = newstr + s[i];
         }
     }
-    int l = newstr.size();
-    int con = 1;
-    for(int i=0;i<l/2;i++){
-        if(newstr[i]!=s[l-i-1]){
-            con = 0;
-            break;
+    cout << newstr<<endl;
+    int i = 0, l = newstr.length() - 1;
+    while (i < l)
+    {
+        if (newstr[i] != newstr[l])
+        {
+            return 0;
         }
+        i++;
+        l--;
     }
-    return con;
+    return 1;
 }
 
-int main(){
+int main()
+{
     int t;
     string s;
-    cin>>t;
-    while(t--){
-        getline(cin,s);
+    cin >> t;
+    while (t--)
+    {
+        getline(cin, s);
         checkPalindrome(s);
     }
     return 0;

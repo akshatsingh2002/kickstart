@@ -1,21 +1,23 @@
 #include<iostream>
 #include<string>
 using namespace std;
-void replace1(string s){
-    string l;
+string replaceSpaces(string &s){
+	string l= "";
     for(int i=0;i<s.length();i++){
         if(s.at(i)==' '){
-            l = l + "@40";
+            l.push_back('@');
+            l.push_back('4');
+            l.push_back('0');
         }
         else{
-            l = l + s[i];
+            l.push_back(s[i]);
         }
     }
-    cout<<l<<endl;
+	return l;
 }
 int main(){
     string s;
     getline(cin,s);
-    replace1(s);
+    cout<<replaceSpaces(s);
     return 0;
 }

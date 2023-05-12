@@ -1,38 +1,28 @@
 #include <iostream>
 #include <vector>
+#include<string>
 using namespace std;
 int compress(vector<char> &chars)
 {
     int final = 0;
     int count = 1;
-    for (int i = 0; i < chars.size() - 1; i++)
-    {
-        if (chars[i] == chars[i + 1] && i != chars.size() - 2)
-        {
-            count++;
+    string str;
+    for(int i=0;i<chars.size()-1;i++){
+        if(chars[i]==chars[i+1]){
+            count ++;
         }
-        else
-        {
-            if (count >= 100)
-            {
-                final = final + 4;
+        else{
+            if(count !=1){
+                str = str+chars[i];
+                str = str+   to_string(count);
             }
-            else if (count >= 10)
-            {
-                final = final + 3;
-            }
-            else if (count >= 2)
-            {
-                final = final + 2;
-            }
-            else
-            {
-                final = final + 1;
+            else{
+                str = str + chars[i];
             }
             count = 1;
         }
     }
-    cout << final << endl;
+    cout<<str<<endl;
 }
 
 int main()

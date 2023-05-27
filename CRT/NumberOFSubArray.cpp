@@ -1,5 +1,6 @@
 #include <iostream>
 #include <map>
+// number of subarray that have the target sum
 using namespace std;
 int main()
 {
@@ -27,18 +28,19 @@ int main()
     int ans = 0;
     for (int i = 0; i < n; i++)
     {
-        if (mymap.find(pre[i] - target) != mymap.end())
-        {
-            mymap[arr[i]] = 1;
+        if (mymap.count(pre[i]-target))
+        {  
+            ans = ans + mymap[pre[i] - target];
+            mymap[pre[i]]++;
         }
         else
         {
-            mymap[arr[i]]++;
-            ans = ans+mymap[arr[i]];
+            mymap[pre[i]]++;
         }
     }
-    for(auto itr:mymap){
-        cout<<itr.first<<" "<<itr.second;
+    for (auto itr : mymap)
+    {
+        cout << itr.first << " " << itr.second << endl;
     }
     cout << ans << endl;
 

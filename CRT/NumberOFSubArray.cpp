@@ -22,20 +22,23 @@ int main()
     {
         cout << pre[i];
     }
-    int target = 0, index = 0;
-    cin >> target >> target;
+    int target = 0;
+    cin >> target;
     int ans = 0;
     for (int i = 0; i < n; i++)
     {
         if (mymap.find(pre[i] - target) != mymap.end())
         {
             mymap[arr[i]] = 1;
-            ans++;
         }
         else
         {
             mymap[arr[i]]++;
+            ans = ans+mymap[arr[i]];
         }
+    }
+    for(auto itr:mymap){
+        cout<<itr.first<<" "<<itr.second;
     }
     cout << ans << endl;
 

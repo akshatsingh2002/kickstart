@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include<map>
 using namespace std;
 void subarray()
 {
@@ -7,8 +8,7 @@ void subarray()
     cin >> n;
     long long val;
     cin >> val;
-    int arr[n] = {0};
-    int pre[n] = {0};
+    vecto
     long long sum = 0;
     for (int i = n - 1; i >= 0; i--)
     {
@@ -21,6 +21,7 @@ void subarray()
         sum += arr[i];
         pre[i] = sum;
     }
+    map<int,int> mymap;
     for(int i=0;i<n;i++){
         
     }

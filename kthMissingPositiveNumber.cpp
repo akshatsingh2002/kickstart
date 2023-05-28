@@ -8,13 +8,12 @@ int findKthPositive(vector<int> &arr, int k)
     int ind = 0;
     int count = 1;
     int i = 0;
-    while (ind < k && i < arr.size())
+    while (ind < k && i < s)
     {
         if (arr[i] != count)
         {
             arr2[ind] = count;
             ind++;
-            i++;
             count++;
         }
         else
@@ -29,7 +28,7 @@ int findKthPositive(vector<int> &arr, int k)
         arr2[ind++] = count++;
     }
     for(int i=0;i<k;i++){
-        cout<<arr2[k]<<" ";
+        cout<<arr2[i]<<" ";
     }
     cout<<endl;
     return arr2[k - 1];

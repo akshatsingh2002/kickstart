@@ -18,12 +18,14 @@ int main(){
     cout<<"Enter the index :";
     cin>>x;
     cout<<"Enter the target";
+    cin>>y;
     int low = 0 ,high=mymap[y].size()-1;
     int mid = (low+high)/2;
     int ans=0;
-    while(low<high){
+    while(low<=high){
         if(mymap[y][mid]<x){
             low = mid + 1;
+        
         }
         else if(mymap[y][mid]>x){
             high = mid - 1;

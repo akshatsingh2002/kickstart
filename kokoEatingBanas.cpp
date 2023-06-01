@@ -8,7 +8,7 @@ class Solution
 public:
     int findans(vector<int> &piles2, int mid)
     {
-        long double sumans = 0;
+        float sumans = 0;
         for (int i = 0; i < piles2.size(); i++)
         {
             if (piles2[i] / mid == 0)
@@ -17,10 +17,10 @@ public:
             }
             else
             {
-                sumans += ceil(double(piles2[i]) / mid);
+                sumans += ceil(float(piles2[i]) / mid);
             }
         }
-        cout<<sumans<<endl;
+        cout<<"sumans"<<sumans<<endl;
 
         return sumans;
     }
@@ -51,6 +51,7 @@ public:
             {
                 low = mid + 1;
             }
+
         }
         return ans;
     }

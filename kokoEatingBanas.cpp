@@ -28,13 +28,14 @@ public:
     {
         sort(piles.begin(), piles.end());
         long long ans = 1e18;
-        long long  low = piles[0];
+        long long  low = 1;
         long long  high = piles[piles.size() - 1];
         long long mid = 0;
         long long temp = 0;
         while (low <= high)
         {
             mid = (low + high) / 2;
+            cout<<"mid"<<mid<<endl;
             temp = findans(piles, mid);
             cout<<"temp"<<temp<<endl;
 

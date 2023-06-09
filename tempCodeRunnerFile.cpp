@@ -1,1 +1,1 @@
-cout << ind;
+cout<<minval<<endl;

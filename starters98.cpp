@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 // void football(){
 //     long long   a,b,x,y;
@@ -15,6 +15,32 @@ using namespace std;
 //         cout<<"Ronaldo"<<endl;
 //     }
 // }
-int main(){
+// void enoughspace(){
+//     long long n,x,y;
+//     cin>>n>>x>>y;
+//     long long ans = x + y*2;
+//     if(ans<=n){
+//         cout<<"YES"<<endl;
+//     }
+//     else{
+//         cout<<"NO"<<endl;
+//     }
+// }
+
+void waitingTime()
+{
+    long long k, x;
+    cin >> k >> x;
+    k = k * 7;
+    cout << k - x<<endl;
+}
+int main()
+{
+    long long t;
+    cin >> t;
+    while (t--)
+    {
+        waitingTime();
+    }
     return 0;
 }

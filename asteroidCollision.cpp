@@ -1,43 +1,63 @@
-class Solution {
-public:
-    vector<int> findans(vector<int> ast){
-        vector<int> temp;
-        int step = 0;
-        for(int i=0;i<ast.size()-1;i++){
-            if(ast[i]+ast[i+1]==0){
-                step = 1;
-                continue;
+#include <iostream>
+#include <vector>
+using namespace std;
+vector<int> myans(vector<int> ast)
+{
+    vector<int> ans;
+    int top = ans.size()-1;
+    int step = 0;
+    for (int i = 0; i < ast.size(); i++)
+    {
+        if (i == 0)
+        {
+            ans.push_back(ast[i]);
+            top++;
+        }
+        else if (ast[i] + ans[top] == 0 && ans[top]<0)
+        {
+            ans.pop_back();
+            top--;
+            step = 1;
+        }
+        else if (ast[i] * ans[top] < 0)
+        {
+            if (abs(ast[i]) > abs(ans[top]) )
+            {
+                ans.pop_back();
+                ans.push_back(ast[i]);
+                
             }
-            else if(ast[i]*ast[i+1]<0){
-                step = 1;
-                if(abs(ast[i])>abs(ast[i+1])){
-                    if(temp.size()==0){
-                        temp.push_back(ast[i]);
-                    }
-                    else if(ast[i]!=temp[temp.size()-1]){
-                        temp.push_back(ast[i]);
-                    }
-                }
-                else  if(abs(ast[i])<abs(ast[i+1])){
-                    if(temp.size()==0){
-                        temp.push_back(ast[i+1]);
-                    }
-                    else if(ast[i+1]!=temp[temp.size()-1]){
-                        temp.push_back(ast[i+1]);
-                    }
-            }
+            step = 1;
+        }
+        else
+        {
+            ans.push_back(ast[i]);
+            top++;
         }
     }
-    if(step == 1 ){
-        return findans(temp);
+    if(step == 1){
+        return myans(ans);
     }
     else{
-        return temp;
+        return ans;
     }
+}
+vector<int> asteroidCollision(vector<int> &ast)
+{
+    vector<int> tmp = myans(ast);
+
+    return tmp;
+}
+
+int main()
+{
+    vector<int> arr = {-2, -1, 1, 2};
+    vector<int> final;
+    final = asteroidCollision(arr);
+    for (int i = 0; i < final.size(); i++)
+    {
+        cout << final[i] << ' ';
     }
-    vector<int> asteroidCollision(vector<int>& asteroids) {
-        
-        vector<int> final = findans(asteroids);
-        return final;
-    }
-};
+    cout << endl;
+    return 0;
+}

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+#include<map>
 using namespace std;
 void drink()
 {
@@ -11,6 +12,15 @@ void drink()
         cin >> arr[i];
     }
     sort(arr, arr + n);
+    map<int,int> mymap;
+    for(int i=0;i<n;i++){
+        if(mymap.find(arr[i])!=mymap.end()){
+            mymap[arr[i]]+=1;
+        }
+        else{
+            mymap.insert({arr[i],1});
+        }
+    }
     int k;
     cin >> k;
     for (int i = 0; i < k; i++)

@@ -3,7 +3,6 @@ using namespace std;
 class Node{
     public:
     Node* next;
-    Node* head=NULL;
     int data;
     Node(int d){
         this->data = d;
@@ -56,6 +55,30 @@ class linklist{
         }
         cout<<temp->data;
     }
+    void insertAtPos(int d , int p){
+        Node* temp = new Node(d);
+        if(p==1){
+            insertAtBegin(d);
+            return;
+        }
+        else{
+            int count=1;
+            Node* itr = head;
+            while(count<p-1){
+                itr = itr->next;
+                count++;
+            }
+            temp->next = itr->next;
+            itr->next = temp;
+        }
+    }
+    void delhead(){
+        Node* temp = head;
+        head = head ->next;
+        temp->next = NULL;
+        free(temp);
+        
+    }
 };
 // void insertAtHead(Node* &head,int d){
 //     Node* temp = new Node(d);
@@ -70,6 +93,8 @@ int main(){
     lst1.insert(3);
     lst1.insertAtBegin(100);
     lst1.insertAtEnd(200);
+    lst1.insertAtPos(500,2);
+    lst1.delhead();
     lst1.print();
 
     return 0;
